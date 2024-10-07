@@ -2,6 +2,8 @@ package lat.pam.droidcafe
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Spinner
 import android.widget.Toast
@@ -20,12 +22,33 @@ class OrderActivity : AppCompatActivity() {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 //            insets
 //        }
+        val cities = resources.getStringArray(R.array.cities_array)
 
+        val spinner = findViewById<Spinner>(R.id.cities_spinner)
+        if (spinner != null) {
+            val adapter = ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, cities)
+            spinner.adapter = adapter
+
+            spinner.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        Toast.makeText(this@OrderActivity, getString(R.string.selected_item) + " " +
+                            "" + cities[position], Toast.LENGTH_SHORT).show()
+                    }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    TODO("Not yet implemented")
+                }
+            }
+        }
     }
 
-    val spinner: Spinner = findViewById(R.id.cities_spinner)
-    // Create an ArrayAdapter using the string array and a default spinner layout.
-    
 
     fun onRadioButtonClicked(view: View) {
         // Is the button now checked?

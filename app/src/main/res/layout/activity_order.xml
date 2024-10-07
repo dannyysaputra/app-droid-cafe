@@ -84,8 +84,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_option" />
 
-
-
     <EditText
         android:id="@+id/phone_text"
         android:layout_width="match_parent"
@@ -95,6 +93,27 @@
         android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
         app:layout_constraintStart_toEndOf="@+id/phone_label" />
+
+    <TextView
+        android:id="@+id/notes_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/notes_label_string"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_text" />
+
+    <EditText
+        android:id="@+id/notes_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/notes_hint"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:maxLines="10"
+        app:layout_constraintBaseline_toBaselineOf="@+id/notes_label"
+        app:layout_constraintStart_toEndOf="@+id/notes_label" />
 
     <TextView
         android:id="@+id/delivery_label"

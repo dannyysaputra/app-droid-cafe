@@ -65,6 +65,9 @@
     <string name="next_day_ground_delivery">Next day ground delivery</string>
     <string name="pick_up">Pick up</string>
     <string name="city_label_string">City</string>
+    <string name="selected_item">Selected iem:</string>
+    <string name="notes_label_string">Notes</string>
+    <string name="notes_hint">Tambahkan catatan pesanan Anda</string>
 
     <string-array name="cities_array">
         <item>Jakarta</item>
